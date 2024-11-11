@@ -1,0 +1,128 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Inicio{% endblock title %}
+
+{% block content %}
+    <div class="container-xxl">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <form action="/editarUsuarios/" method="POST">
+                        {% csrf_token %}
+                        <h6 class="heading-small text-muted mb-4">Editar Usuario</h6>
+                        
+                        <!-- Código de usuario -->
+                        <div class="pl-lg-4">
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-username">Código de usuario</label>
+                                        <input type="text" name="codigo_usuario" class="form-control" value="{{ usuario.codigo_usuario }}" readonly required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Datos personales -->
+                            <div class="row mb-3">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-first-name">Nombres</label>
+                                        <input type="text" id="input-first-name" class="form-control" name="nombres" value="{{ usuario.nombres }}" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-apellido-paterno">Apellido paterno</label>
+                                        <input type="text" id="input-apellido-paterno" class="form-control" name="apellido_paterno" value="{{ usuario.apellido_paterno }}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-apellido-materno">Apellido materno</label>
+                                        <input type="text" id="input-apellido-materno" class="form-control" name="apellido_materno" value="{{ usuario.apellido_materno }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <!-- Información de rol y usuario -->
+                        <div class="pl-lg-4">
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <label for="input-role" class="form-control-label">Rol</label>
+                                    <select class="form-control" id="input-role" name="rol" required>
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        {% for grupo in grupos %}
+                                            <option value="{{ grupo.id }}" {% if grupo.id == usuario.rol.id %}selected{% endif %}>{{ grupo.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="input-user" class="form-control-label">Usuario</label>
+                                    <select class="form-control" id="input-user" name="user" required>
+                                        <option value="" disabled selected>Seleccione un usuario</option>
+                                        {% for user in users %}
+                                            <option value="{{ user.id }}" {% if user.id == usuario.user.id %}selected{% endif %}>{{ user.username }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-ci">Cédula de identidad</label>
+                                        <input type="text" id="input-ci" class="form-control" name="ci" value="{{ usuario.ci }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <!-- Dirección -->
+                        <h6 class="heading-small text-muted mb-4">Dirección</h6>
+                        <div class="pl-lg-4">
+                            <div class="row mb-3">
+                                <div class="col-lg-12">
+                                    <label for="input-urbanizacion" class="form-control-label">Zona/Urbanización</label>
+                                    <select class="form-control" id="input-urbanizacion" name="urbanizaciones" required>
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        {% for zona in urbanizaciones %}
+                                            <option value="{{ zona.gid }}" {% if zona.gid == usuario.urbanizaciones.gid %}selected{% endif %}>{{ zona.nombre }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-calle-avenida">Calle/Avenida</label>
+                                        <input type="text" id="input-calle-avenida" class="form-control" name="calle_avenida" value="{{ usuario.calle_av }}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-numero-vivienda">Número de vivienda</label>
+                                        <input type="number" id="input-numero-vivienda" class="form-control" name="numero_vivienda" value="{{ usuario.numero_vivienda }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+
+                        <!-- Botón de guardar cambios -->
+                        <div class="col-lg-4">
+                            <button type="submit" class="btn btn-primary custom-button">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </br>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

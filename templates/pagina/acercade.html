@@ -1,0 +1,85 @@
+{% extends 'pagina/index.html' %}
+{% load static %}
+
+{% block content %}
+		<!-- Main content Start -->
+        <div class="main-content">
+            <!-- Breadcrumbs Start -->
+            <div class="rs-breadcrumbs breadcrumbs-overlay">
+                <div class="breadcrumbs-img">
+                    <img src='{% static "assets/images/breadcrumbs/2.jpg" %}' alt="Breadcrumbs Image">
+                </div>
+                <div class="breadcrumbs-text white-color">
+                    <h1 class="page-title">Antecedentes</h1>
+                    <ul>
+                        <li>
+                            <a class="active" href="inicio">Inicio</a>
+                        </li>
+                        <li>Antecedentes</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Breadcrumbs End -->
+
+            <!-- Counter Section Start -->
+            <div id="rs-about" class="rs-about style3 pt-100 md-pt-70">
+                <div class="container">
+                    <div class="row y-middle">
+                        <div class="col-lg-4 lg-pr-0 md-mb-30">
+                            <div class="about-intro">
+                                <div class="sec-title">
+                                    <div class="sub-title orange">Que es una IDE</div>
+                                    <h2 class="title mb-21">Retos de las IDE geográficas</h2>
+                                    <div class="desc big">
+                                        A pesar de los avances y los beneficios de las IDE, aún existen desafíos importantes:
+                                        
+                                        Falta de estandarización completa: Aunque hay estándares globales en el campo de los datos espaciales, algunas regiones y organizaciones todavía no adoptan completamente estos protocolos, lo que dificulta el intercambio fluido de información.
+                                        Costos de implementación: La creación y mantenimiento de una IDE puede ser costosa, especialmente para países en desarrollo o pequeñas organizaciones que no tienen acceso a los recursos necesarios.
+                                        Privacidad y seguridad: Al igual que otros tipos de datos, los geoespaciales pueden ser sensibles. Es crucial que las políticas de privacidad y seguridad estén en su lugar para evitar el uso indebido de la información.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 pl-83 md-pl-15">
+                            <div class="row rs-counter couter-area">
+                                <div class="col-md-4 sm-mb-30">
+                                    <div class="counter-item one">
+                                        <img class="count-img" src='{% static "assets/images/about/style3/icons/1.png" %}' alt="">
+                                        <h2 class="number rs-count kplus">2</h2>
+                                        <h4 class="title mb-0">Estudiates</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 sm-mb-30">
+                                    <div class="counter-item two">
+                                        <img class="count-img" src='{% static "assets/images/about/style3/icons/2.png" %}' alt="">
+                                        <h2 class="number rs-count">3.50</h2>
+                                        <h4 class="title mb-0">Avances</h4>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="counter-item three">
+                                        <img class="count-img" src='{% static "assets/images/about/style3/icons/3.png" %}' alt="">
+                                        <h2 class="number rs-count percent">95</h2>
+                                        <h4 class="title mb-0">Antecedentes</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Counter Section End -->
+
+            <!-- About Section Start -->
+            <div id="rs-about-video" class="rs-about-video pt-100 pb-100 md-pt-70 md-pb-70">
+                <div class="container">
+                    <div class="video-img-part media-icon orange-color2">
+                        <img src='{% static "assets/images/about/about-video-bg-orange.png" %}' alt="Video Bg Image">
+                        <a class="popup-videos" href="https://youtu.be/3b79-ifOJak?si=nx7DvljshktfOrVP">
+                            <i class="fa fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- About Section End -->       
+
+{% endblock %}

@@ -1,0 +1,222 @@
+{% extends 'home/base.html' %}
+
+{% block title %}Inicio{% endblock title %}
+
+{% block content %}
+    <div class="container-xxl">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{% url 'formulario_ficha' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            
+                            <!-- Título del formulario -->
+                            <h6 class="heading-small text-muted mb-4">Nueva Ficha Operativa</h6>
+                            
+                            <!-- Sección: Código y Fecha -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="codigo_vecino" class="form-label font-weight-bold">Código de Vecino</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            </div>
+                                            <select id="codigo_vecino" name="codigo" class="form-control form-select-lg border border-primary rounded" required onchange="cargarDatos(this.value);">
+                                                <option value="">Seleccione un vecino</option>
+                                                {% for solicitud in solicitudes %}
+                                                    <option value="{{ solicitud.id }}">{{ solicitud.codigo_vecino }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="fecha">Fecha</label>
+                                        <input type="date" id="fecha" class="form-control" name="fecha" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Ubicación y Urbanización -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="distrito">Distrito</label>
+                                        <input type="text" id="distrito" class="form-control" name="distrito" value="{{ request.POST.distrito }}" readonly required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="urbanizacion" class="form-control-label">Zona/Urbanización</label>
+                                        <input type="text" id="urbanizacion" class="form-control" name="urbanizacion" value="{{ request.POST.urbanizacion }}" readonly required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Dirección -->
+                            <hr class="my-4" />
+                            <h6 class="heading-small text-muted mb-4">Ubicación/Dirección</h6>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="ubicacion_direccion">Ubicación/Dirección</label>
+                                        <input type="text" id="ubicacion_direccion" class="form-control" name="ubicacion_direccion" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="latitud_longitud">Latitud/Longitud</label>
+                                        <input type="text" id="latitud_longitud" class="form-control" name="latitud_longitud" required readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Asignación de recursos -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="designacion" class="form-control-label">Técnico Supervisor</label>
+                                        <select id="designacion" name="designacion" class="form-control" required>
+                                            <option value="" disabled selected>Seleccione una opción</option>
+                                            {% for user in designaciones %}
+                                                <option value="{{ user.user.id }}">{{ user.nombres }} {{ user.apellido_paterno }} {{ user.apellido_materno }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="cuadrilla">Cuadrilla</label>
+                                        <input type="text" id="cuadrilla" class="form-control" name="cuadrilla" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Maquinaria y Operador -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="maquinaria">Maquinaria</label>
+                                        <input type="text" id="maquinaria" class="form-control" name="maquinaria" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="operador">Operador</label>
+                                        <input type="text" id="operador" class="form-control" name="operador" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Detalles del trabajo -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="concepto">Concepto</label>
+                                        <input type="text" id="concepto" class="form-control" name="concepto" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="volumen">Volumen</label>
+                                        <input type="text" id="volumen" class="form-control" name="volumen" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="descripcion">Descripción del Trabajo</label>
+                                        <textarea id="descripcion" class="form-control" name="descripcion" rows="4" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Imágenes -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label for="imagenInicio" class="form-label">Subir Foto de Inicio</label>
+                                    <input type="file" class="form-control" id="imagenInicio" name="imagenInicio" accept="image/*">
+                                    <img id="imagenInicioPreview" style="display: none; margin-top: 10px; max-width: 100%; height: auto;" alt="Vista previa de la imagen de inicio">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="imagenDesarollo" class="form-label">Subir Foto de Desarrollo</label>
+                                    <input type="file" class="form-control" id="imagenDesarollo" name="imagenDesarollo" accept="image/*">
+                                    <img id="imagenDesarolloPreview" style="display: none; margin-top: 10px; max-width: 100%; height: auto;" alt="Vista previa de la imagen de desarrollo">
+                                </div>
+                                <div class="col-lg-4">
+                                    <label for="imagenCulminado" class="form-label">Subir Foto de Culminación</label>
+                                    <input type="file" class="form-control" id="imagenCulminado" name="imagenCulminado" accept="image/*">
+                                    <img id="imagenCulminadoPreview" style="display: none; margin-top: 10px; max-width: 100%; height: auto;" alt="Vista previa de la imagen de culminación">
+                                </div>
+                            </div>
+                            
+                            <!-- Sección: Estado -->
+                            <hr class="my-4" />
+                            <h6 class="heading-small text-muted mb-4">Estado</h6>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label for="estado" class="form-control-label">Estado</label>
+                                    <select id="estado" name="estado" class="form-control" required>
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        {% for valor, etiqueta in estado_opciones %}
+                                            <option value="{{ valor }}">{{ etiqueta }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Botón de guardar -->
+                            <hr class="my-4" />
+                            <div class="col-lg-4">
+                                <button type="submit" class="btn btn-primary custom-button">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function mostrarVistaPrevia(inputId, previewId) {
+            document.getElementById(inputId).addEventListener('change', function(event) {
+                const [file] = event.target.files;
+                if (file) {
+                    const preview = document.getElementById(previewId);
+                    preview.src = URL.createObjectURL(file);
+                    preview.style.display = 'block'; // Mostrar la imagen
+                }
+            });
+        }
+    
+        // Asignar el evento de cambio a cada input de imagen
+        mostrarVistaPrevia('imagenInicio', 'imagenInicioPreview');
+        mostrarVistaPrevia('imagenDesarollo', 'imagenDesarolloPreview');
+        mostrarVistaPrevia('imagenCulminado', 'imagenCulminadoPreview');
+    </script>
+    
+    <script>
+        function cargarDatos(codigoId) {
+            if (codigoId) {
+                fetch(`/obtener_datos/${codigoId}/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('distrito').value = data.distrito;
+                        document.getElementById('urbanizacion').value = data.urbanizacion;
+                        document.getElementById('latitud_longitud').value = data.latitud_longitud;
+                        document.getElementById('tecnico').value = data.tecnico;
+                    })
+                    .catch(error => console.error('Error:', error));
+            } else {
+                // Limpiar los campos si no se selecciona un código
+                document.getElementById('distrito').value = '';
+                document.getElementById('urbanizacion').value = '';
+                document.getElementById('latitud_longitud').value = '';
+                document.getElementById('tecnico').value = '';
+            }
+        }
+    </script>
+{% endblock content %}

@@ -1,0 +1,81 @@
+{% extends 'pagina/index.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Main content Start -->
+<div class="main-content">
+    <!-- Breadcrumbs Start -->
+    <div class="rs-breadcrumbs breadcrumbs-overlay">
+        <div class="breadcrumbs-img">
+            <img src='{% static "assets/images/breadcrumbs/5.jpg" %}' alt="Breadcrumbs Image">
+        </div>
+        <div class="breadcrumbs-text white-color padding">
+            <h1 class="page-title">Contactanos</h1>
+            <ul>
+                <li>
+                    <a class="active" href="inicio">Inicio</a>
+                </li>
+                <li>Contactanos</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumbs End -->            
+
+    <!-- Contact Section Start -->
+    <div class="contact-page-section orange-color pt-100 pb-100 md-pt-70 md-pb-70">
+        <div class="container">
+            <div class="row align-items-center pb-50">
+                <div class="col-lg-4 md-mb-50">
+                    <div class="contact-address-section style2">                            
+                        <div class="contact-info mb-15 md-mb-30">
+                            <div class="icon-part">
+                                <i class="fa fa-home"></i>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="info-subtitle">Dirección</h5>
+                                <h4 class="info-title">Dirección de Gestión  <br>de Riesgos… </h4>
+                            </div>
+                        </div>
+                        <div class="contact-info mb-15 md-mb-30">
+                            <div class="icon-part">
+                                <i class="fa fa-envelope-open-o"></i>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="info-subtitle">Email</h5>
+                                <h4 class="info-title"><a href="gamea.contacto@elalto.gob.bo">gamea.contacto@elalto.gob.bo</a></h4>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="icon-part">
+                                <i class="fa fa-headphones"></i>
+                            </div>
+                            <div class="content-part">
+                                <h5 class="info-subtitle">Numeros</h5>
+                                <h4 class="info-title"><a href="tel:2836696">2836696</a></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <!-- Map Section Start --> 
+                    <div class="contact-map">
+                        <iframe src="https://maps.google.com/maps?q=Fort%20Miley&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+                    </div>
+                    <!-- Map Section End -->
+                </div>
+            </div>
+
+            <div class="row align-items-end contact-bg1">
+                <div class="col-lg-4 md-pt-50 lg-pr-0">
+                    <div class="contact-image">
+                        <img src='{% static "assets/images/contact/2.png" %}' alt="Contact Images">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Section End -->  
+
+</div> 
+<!-- Main content End --> 
+{% endblock %}

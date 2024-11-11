@@ -1,0 +1,324 @@
+{% extends 'pagina/index.html' %}
+{% load static %}
+
+<!--fin de contenedor de videos-->
+{% block content %}
+<!-- Main content Start -->
+<div class="main-content">
+    <!-- Banner Section Start -->
+    <div id="rs-banner" class="rs-banner style10">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pl-60 order-last">
+                    <div class="img-part">
+                       <img class="up-down-new" src='{% static "assets/pag/images/banner/home12/uno.png" %}' alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 pr-0">
+                    <div class="banner-content">
+                       <div class="sl-sub-title wow bounceInLeft" data-wow-delay="300ms" data-wow-duration="2000ms"> IDE EL ALTO </div>
+                        <h1 class="sl-title wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="3000ms">"Un buen IDE es como un copiloto en el desarrollo: siempre está ahí para ayudar, sugerir y corregir." 
+                        </h1>
+                        <div class="banner-btn wow fadeInUp" data-wow-delay="1500ms" data-wow-duration="2000ms">
+                            <a class="readon green-banner" href="#">Ingresar</a>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+        <div class="banner-intro-box">
+            <div class="shape-img">
+                <img class="up-down-new" src='{% static "assets/pag/images/banner/home12/dotted-shape.png" %}' alt="">
+            </div>
+            <div class="intro-img">
+                <img class="spine2" src='{% static "assets/pag/images/banner/home12/intro-box.png" %}' alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Banner Section End -->
+
+ {% comment %}    <!-- Partner Start -->
+    <div class="rs-partner style2 pt-100 md-pt-70">
+        <div class="container">
+            <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="3" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="5" data-md-device-nav="false" data-md-device-dots="false">
+                <div class="partner-item">
+                    <a href="#"><img src='{% static "assets/images/partner/style3/1.png" %}' alt=""></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="assets/images/partner/style3/2.png" alt=""></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="assets/images/partner/style3/3.png" alt=""></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="assets/images/partner/style3/4.png" alt=""></a>
+                </div>
+                <div class="partner-item">
+                    <a href="#"><img src="assets/images/partner/style3/5.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partner End --> {% endcomment %}
+</div> 
+<!-- Main content End -->
+
+       <!-- Features Section start -->
+       <div id="rs-features" class="rs-features style2">
+        <div class="container">
+           <div class="row">
+                <div class="col-lg-3 col-md-6 md-mb-30">
+                    <div class="rs-iconbox-area">
+                        <div class="icon-area">
+                           <img src= '{% static  "assets/pag/images/features/style2/1.png" %}' alt="">
+                        </div>
+                        <div class="text-area">
+                           <h3 class="icon-title">GEO-Visor</h3>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-lg-3 col-md-6 md-mb-30">
+                    <div class="rs-iconbox-area">
+                        <div class="icon-area">
+                           <img  src='{% static "assets/pag/images/features/style2/2.png" %}' alt="">
+                        </div>
+                        <div class="text-area">
+                           <h3 class="icon-title" >Catalogo de datos</h3>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-lg-3 col-md-6 sm-mb-30">
+                    <div class="rs-iconbox-area">
+                        <div class="icon-area">
+                           <img src='{% static "assets/pag/images/features/icon/2.png" %}' alt="">
+                        </div>
+                        <div class="text-area">
+                           <h3 class="icon-title">Metadatos</h3>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-lg-3 col-md-6">
+                    <div class="rs-iconbox-area">
+                        <div class="icon-area">
+                           <img src='{% static "assets/pag/images/features/icon/4.png" %}' alt="">
+                        </div>
+                        <div class="text-area">
+                           <h3 class="icon-title">Area de Riesgos</h3>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- Features Section End -->
+
+<!-- Choose Section Start -->
+<div class="why-choose-us style3">
+    <div class="container">
+       <div class="row align-items-center">
+           <div class="col-lg-6 js-tilt md-mb-40">
+               <div class="img-part">
+                    <img src='{% static "assets/pag/images/choose/home12/1.png" %}' alt="">
+                
+               </div>
+           </div>
+           <div class="col-lg-6 pl-60 md-pl-15">
+                <div class="sec-title3 mb-30">
+                    <h2 class=" title new-title margin-0 pb-15">Informacion Geografica</h2>
+                    <div class="new-desc"> 
+                        Una IDE (Infraestructura de Datos Espaciales) en sistemas de información geográfica se refiere a un marco que permite la recopilación, gestión, intercambio y uso de datos geoespaciales. Su objetivo es facilitar el acceso y la interoperabilidad de los datos espaciales entre diferentes usuarios y aplicaciones.</div>
+                </div>
+                <div class="services-part mb-20">
+                    <div class="services-icon">
+                        <img src= '{% static "assets/pag/images/choose/home12/icon/1.png" %}' alt="">
+                    </div>
+                    <div class="services-text">
+                        <h2 class="title"> Datos Geoespaciales</h2>
+                        <p class="services-txt">Conjuntos de datos geográficos que pueden incluir mapas, imágenes satelitales, datos de sensores, etc. </p>
+                    </div>
+                </div> 
+                <div class="services-part mb-20">
+                    <div class="services-icon">
+                        <img src= '{% static "assets/pag/images/choose/home12/icon/2.png" %}' alt="">
+                    </div>
+                    <div class="services-text">
+                        <h2 class="title"> Metadatos</h2>
+                        <p class="services-txt">Información que describe el origen, calidad y características de los datos.</p>
+                    </div>
+                </div> 
+                <div class="services-part">
+                    <div class="services-icon">
+                        <img src= '{% static "assets/pag/images/choose/home12/icon/3.png" %}' alt="">
+                    </div>
+                    <div class="services-text">
+                        <h2 class="title">Normas y Protocolos</h2>
+                        <p class="services-txt">  Directrices que permiten la interoperabilidad entre diferentes sistemas y formatos de datos.</p>
+                    </div>
+                </div>
+                <div class="services-part">
+                    <div class="services-icon">
+                        <img src= '{% static "assets/pag/images/choose/home12/icon/3.png" %}' alt="">
+                    </div>
+                    <div class="services-text">
+                        <h2 class="title">Plataformas y Herramientas</h2>
+                        <p class="services-txt"> Software y aplicaciones que permiten el análisis y visualización de los datos espaciales.</p>
+                    </div>
+                </div>
+           </div> 
+       </div> 
+    </div>
+</div>
+<!-- Choose Section End -->
+
+<!-- Counter Section End -->
+<div class="rs-counter home12-style pt-80">
+    <div class="container">
+        <div class="row couter-area bg8">
+            <div class="col-lg-3 col-md-6 md-mb-30">
+                <div class="counter-item text-center">
+                    <h2 class="rs-count pr-0">50</h2>
+                    <span class="prefix">k</span>
+                    <h4 class="title mb-0">Ingresos</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 md-mb-30">
+                <div class="counter-item text-center">
+                    <h2 class="number rs-count kplus">70</h2>
+                    <h4 class="title mb-0">Vistas</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 sm-mb-30">
+                <div class="counter-item text-center">
+                    <h2 class="rs-count plus">120</h2>
+                    <h4 class="title mb-0">Actualizaciones</h4>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="counter-item text-center">
+                    <h2 class="rs-count percent">99</h2>
+                    <h4 class="title mb-0">Cantidad</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Counter Section Start -->
+ 	        <!-- Team Section Start inicio de la galeria -->
+             <div id="rs-team" class="rs-team style1 style7 gray-bg pt-100 pb-100 md-pt-70 md-pb-70">
+	            <div class="container">
+	                <div class="sec-title2 text-center mb-50 md-mb-30">
+	                    <div class="sub-title primary">Galeria</div>
+	                    <h2 class="title mb-0">Nuestros Servicios</h2>
+	                </div>
+	                <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="false" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
+	                    <div class="team-item">
+	                        <img src='{% static "assets/pag/images/team/1.jpg" %}' alt="">
+	                        <div class="content-part">
+	                            <h4 class="name"><a href="team-single.html">Jhon Pedrocas</a></h4>
+	                            <span class="designation">Professor</span>
+	                            {% comment %} <ul class="social-links">
+	                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+	                            </ul> {% endcomment %}
+	                        </div>
+	                    </div>
+	                    <div class="team-item">
+	                        <img src='{% static "assets/pag/images/team/2.jpg" %}' alt="">
+	                        <div class="content-part">
+	                            <h4 class="name"><a href="team-single.html">Jesika Albenian</a></h4>
+	                            <span class="designation">Professor</span>
+	                            {% comment %} <ul class="social-links">
+	                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+	                            </ul> {% endcomment %}
+	                        </div>
+	                    </div>
+	                    <div class="team-item">
+	                        <img src='{% static "assets/pag/images/team/3.jpg" %}' alt="">
+	                        <div class="content-part">
+	                            <h4 class="name"><a href="team-single.html">Alex Anthony</a></h4>
+	                            <span class="designation">Professor</span>
+	                            {% comment %} <ul class="social-links">
+	                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+	                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+	                            </ul> {% endcomment %}
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- Team Section End fin de la galeria-->
+<!--  inicio de Blog Section Start -->
+<div id="rs-blog" class="rs-blog style2 modify2 pt-100 pb-100 md-pt-70 md-pb-70">
+    <div class="container relative">
+      <div class="sec-title2 text-center mb-50">
+        <div class="sub-title"> Noticias y Articulos</div>
+        <h2 class="title"> Noticias y Articulos</h2>
+      </div> 
+        <div class="rs-carousel owl-carousel" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="2" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="1" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
+            <div class="blog-item">
+                <div class="image-part">
+                     <img src= '{% static "assets/pag/images/blog/style2/4.jpg" %}' alt="">
+                </div>
+                <div class="blog-content">
+                    <span class="categories uppercase color-bg1">Articulo</span>
+                    <h3 class="title mt-10 mb-10"><a href="blogs">Ques es una IDE</a></h3>
+                    <ul class="blog-meta">
+                        <li><i class="fa fa-user-o"></i> Usuario</li>
+                        <li><i class="fa fa-calendar"></i>Junio 15, 2019</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="blog-item">
+                <div class="image-part">
+                     <img src= '{% static "assets/pag/images/blog/style2/5.jpg" %}' alt="">
+                </div>
+                <div class="blog-content">
+                    <span class="categories uppercase color-bg2">Articulo</span>
+                    <h3 class="title mt-10 mb-10"><a href="blogs">Sistemas de Informacion Geografica</a></h3>
+                    <ul class="blog-meta">
+                        <li><i class="fa fa-user-o"></i> Usuario</li>
+                        <li><i class="fa fa-calendar"></i>Junio 15, 2019</li>
+                    </ul>
+                </div>
+            </div>          
+        </div>
+    </div>
+</div>
+<!-- fin de Blog Section End -->
+
+<!-- Newsletter section start -->
+<div class="rs-newsletter style1 green-color mb--90 sm-mb-0 sm-pb-70">
+    <div class="container">
+        <div class="newsletter-wrap">
+            <div class="row y-middle">
+                <div class="col-lg-6 col-md-12 md-mb-30">
+                   <div class="content-part">
+                       <div class="sec-title">
+                           <div class="title-icon md-mb-15">
+                               <img src= '{% static "assets/pag/images/white-newsletter3.png" %}' alt="images">
+                           </div>
+                           <h2 class="title mb-0 white-color">Información Eficiente y efectiva</h2>
+                       </div>
+                   </div>
+                </div>
+                {% comment %} <div class="col-lg-6 col-md-12">
+                    <form class="newsletter-form">
+                        <input type="email" name="email" placeholder="Enter Your Email" required="">
+                        <button type="submit">Ingresar</button>
+                    </form>
+                </div> {% endcomment %}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Newsletter section end -->
+ 
+ <!--fin de contenedor de imagens-->    
+{% endblock %}

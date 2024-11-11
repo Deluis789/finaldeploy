@@ -1,0 +1,135 @@
+{% extends 'home/base.html' %}
+
+{% block title %} Listar Usuarios {% endblock title %}
+
+{% block content %}
+{% load static %}
+    <!-- Top Bar Start -->
+    <div class="container-xxl"> 
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row align-items-center">
+                            <div class="col">                      
+                                <h4 class="card-title">Listar Designación a Técnicos</h4>                      
+                            </div><!--end col-->
+                            <div class="col-auto"> 
+                                <form class="row g-2">
+                                    <div class="col-auto">
+                                        <a class="btn bg-primary-subtle text-primary dropdown-toggle d-flex align-items-center arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" data-bs-auto-close="outside">
+                                            <i class="iconoir-filter-alt me-1"></i> Filtrar
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-start">
+                                            <div class="p-2">
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-all">
+                                                    <label class="form-check-label" for="filter-all">
+                                                      All 
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-one">
+                                                    <label class="form-check-label" for="filter-one">
+                                                        New
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-two">
+                                                    <label class="form-check-label" for="filter-two">
+                                                        VIP
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-three">
+                                                    <label class="form-check-label" for="filter-three">
+                                                        Repeat
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-four">
+                                                    <label class="form-check-label" for="filter-four">
+                                                        Referral
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-five">
+                                                    <label class="form-check-label" for="filter-five">
+                                                        Inactive
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" checked id="filter-six">
+                                                    <label class="form-check-label" for="filter-six">
+                                                        Loyal
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-auto">
+                                      <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#addBoard"><i class="fa-solid fa-plus me-1"></i> Agregar Usuario</button>
+                                    </div><!--end col-->
+                                </form>    
+                            </div><!--end col-->
+                        </div><!--end row-->                                  
+                    </div><!--end card-header-->
+                    <div class="card-body pt-0"> 
+                        
+                        <div class="table-responsive">
+                            <table class="table mb-0 checkbox-all" id="datatable_1">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-center">Código de usuario</th>
+                                        <th class="text-center">Nombres</th>
+                                        <th class="text-center">Apellido paterno</th>
+                                        <th class="text-center">Apellido materno</th>
+                                        <th class="text-center">Distrito</th>
+                                        <th class="text-center">Cedula de Identidad</th>
+                                        <th class="text-center">Ubicación Geográfica</th>
+                                        <th class="text-center">Urbanizació</th>
+                                        <th class="text-center">Designado</th>
+                                        <th style="text-center">Estado Solicitud</th>
+                                        <th class="text-center">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for solicitudes in solicitud %}
+                                    <tr>
+                                        <td class="text-center">{{ solicitudes.codigo_vecino }}</td>
+                                        <td class="text-center">{{ solicitudes.nombres }}</td>
+                                        <td class="text-center">{{ solicitudes.apellido_paterno }}</td>
+                                        <td class="text-center">{{ solicitudes.apellido_materno }}</td>
+                                        <td class="text-center">{{ solicitudes.distrito }}</td>
+                                        <td class="text-center">{{ solicitudes.cedula_identidad }}</td>
+                                        <td class="text-center">{{ solicitudes.ubicacion_geografica }}</td>
+                                        <td class="text-center">{{ solicitudes.urbanizaciones }}</td>
+                                        <td class="text-center">{{ solicitudes.designacion }}</td>
+                                        <td class="text-center">{{ solicitudes.estado }}</td>
+                                        <td class="text-center actions">
+                                            <!-- Icono para editar -->
+                                            <a href="#" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <!-- Icono para eliminar -->
+                                            <a href="{% url 'eliminarSolicitudes' solicitudes.codigo_vecino %}" title="Eliminar">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                            <!-- Icono para imprimir PDF -->
+                                            <a href="#" title="Imprimir PDF">
+                                                <i class="fas fa-file-pdf"></i>
+                                            </a>
+                                        </td>
+                                    </tr> 
+                                    {% endfor %}                                                                           
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div> <!-- end row -->                                     
+    </div><!-- container -->
+
+{% endblock %}

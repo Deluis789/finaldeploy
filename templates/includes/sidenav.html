@@ -1,0 +1,205 @@
+{% load static %}
+<!-- leftbar-tab-menu -->
+    <div class="startbar d-print-none">
+        <!--start brand-->
+        <div class="brand">
+            <a href="index.html" class="logo">
+                {% comment %} <span>
+                    <img src="static/assets/images/logo-span.png" alt="logo-small" class="logo-sm">
+                </span> {% endcomment %}
+                <span class="">
+                    <img src="{% static 'assets/images/logo-alto.png' %}" alt="logo-large" class="logo-lg logo-light">
+                    <img src="{% static 'assets/images/logo-alto.png' %}" alt="logo-large" class="logo-lg logo-dark">
+                </span>
+            </a>
+        </div>
+        <!--end brand-->
+        <!--start startbar-menu-->
+        <div class="startbar-menu" >
+            <div class="startbar-collapse" id="startbarCollapse" data-simplebar>
+                <div class="d-flex align-items-start flex-column w-100">
+                    <!-- Navigation -->
+                    <ul class="navbar-nav mb-auto w-100">
+                        <li class="menu-label pt-0 mt-0">
+                            <!-- <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small> -->
+                            <span>MENÚ PRINCIPAL</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarDashboards">
+                                <i class="iconoir-home-simple menu-icon"></i>
+                                <span>Panel de Control</span>
+                            </a>
+                            <div class="collapse " id="sidebarDashboards">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Inicio</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="ecommerce-index.html">Página Inicio</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarDashboards-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarApplications" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarApplications">
+                                <i class="iconoir-view-grid menu-icon"></i>
+                                <span>Aplicaciones</span>
+                            </a>
+                            <div class="collapse " id="sidebarApplications">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="apps-calendar.html">Calendario</a>
+                                    </li><!--end nav-item-->                            
+                                </ul><!--end nav-->
+                            </div><!--end startbarApplications-->
+                        </li><!--end nav-item-->
+                        <li class="menu-label mt-2">
+                            <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small>
+                            <span>PÁGINA</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarElements" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarElements">
+                                <i class="fas fa-cog menu-icon"></i>
+                                <span>Configuraciones</span>
+                            </a>
+                            <div class="collapse " id="sidebarElements">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="ui-alerts.html">Cambiar Contraseña</a>
+                                    </li><!--end nav-item--> 
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarElements-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarAdvancedUI" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarAdvancedUI">
+                                <i class="fas fa-users menu-icon"></i>
+                                <span>Usuarios</span>
+                            </a>
+                            <div class="collapse " id="sidebarAdvancedUI">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'registrarUsuarios' %}">Agregar Usuario</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'listarUsuarios' %}">Listar Usuarios</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesión</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarAdvancedUI-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarForms" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarForms">
+                                <i class="iconoir-journal-page menu-icon"></i>
+                                <span>Solicitudes</span>
+                            </a>
+                            <div class="collapse " id="sidebarForms">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'formulario_solicitud' %}">Agregar Solicitud a Técnico</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarForms-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarCharts" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarCharts">
+                                <i class="fas fa-sticky-note menu-icon"></i>
+                                <span>Solicitudes de Vecinos</span>
+                            </a>
+                            <div class="collapse " id="sidebarCharts">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'listarVecinos' %}">Listar Solicitudes</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarCharts-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarTables" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarTables">
+                                <i class="iconoir-table-rows menu-icon"></i>
+                                <span>Solicitudes de Técnico</span>
+                            </a>
+                            <div class="collapse " id="sidebarTables">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'listarSolicitudes' %}">Listar Solicitudes</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarTables-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarIcons" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarIcons">
+                                <i class="fas fa-boxes menu-icon"></i>
+                                <span>Fichas Operativas</span>
+                            </a>
+                            <div class="collapse " id="sidebarIcons">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'formulario_ficha' %}">Agregar Ficha Operativa</a>
+                                    </li><!--end nav-item-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{% url 'listarFichas' %}">Listar Fichas Operativas</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarIcons-->
+                        </li><!--end nav-item-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarMaps" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarMaps">
+                                <i class="far fa-file-pdf menu-icon"></i>
+                                <span>Reportes</span>
+                            </a>
+                            <div class="collapse " id="sidebarMaps">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="maps-google.html">Generar Reportes</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarMaps-->
+                        </li><!--end nav-item-->
+                        <li class="menu-label mt-2">
+                            <small class="label-border">
+                                <div class="border_left hidden-xs"></div>
+                                <div class="border_right"></div>
+                            </small>
+                            <span>SEGURIDAD</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#sidebarPages" data-bs-toggle="collapse" role="button"
+                                aria-expanded="false" aria-controls="sidebarPages">
+                                <i class="fas fa-key menu-icon"></i>
+                                <span>Backup</span>
+                            </a>
+                            <div class="collapse " id="sidebarPages">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="pages-profile.html">Generar Backup</a>
+                                    </li><!--end nav-item-->
+                                </ul><!--end nav-->
+                            </div><!--end startbarPages-->
+                        </li><!--end nav-item-->
+                    </ul><!--end navbar-nav--->
+                    
+                </div>
+            </div><!--end startbar-collapse-->
+        </div><!--end startbar-menu-->    
+    </div><!--end startbar-->
+    <!-- end leftbar-tab-menu-->

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-startbar="light" data-bs-theme="light">
+
+{% load static %}
+<!-- Mirrored from mannatthemes.com/rizz/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Oct 2024 15:33:02 GMT -->
+{% include "includes/head.html" %}
+
+<body>
+
+    <!-- Top Bar Start -->
+    <div class="topbar d-print-none">
+        <div class="container-xxl">
+            {% include "includes/nav.html" %}
+            <!-- end navbar-->
+        </div>
+    </div>
+    <!-- Top Bar End -->
+    {% include "includes/sidenav.html" %}
+
+    <div class="page-wrapper">
+
+        <!-- Page Content-->
+        <div class="page-content">
+
+            {% block content %}{% endblock content %}
+            <!--Start Footer-->
+            
+            {% include "includes/footer.html" %}
+
+            <!--end footer-->
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+    <!-- Javascript  -->
+    <!-- vendor js -->
+    {% include "includes/scripts.html" %}
+</body>
+<!--end body-->
+
+
+<!-- Mirrored from mannatthemes.com/rizz/default/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Oct 2024 15:33:05 GMT -->
+</html>

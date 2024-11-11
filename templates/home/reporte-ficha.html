@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Ficha Operativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 8px; /* Ajuste del tamaño de la fuente */
+        }
+
+        /* Estilo para la página en formato vertical al imprimir */
+        @media print {
+            @page {
+                size: portrait; /* Establece la orientación vertical */
+                margin: 10mm; /* Ajusta los márgenes para la impresión */
+            }
+        }
+
+        /* Contenedor principal */
+        .container {
+            margin: 5px;
+            border: 1px solid #000;
+            padding: 5px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Contenedor de la tabla responsiva */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto; /* Permite el desplazamiento horizontal */
+            -webkit-overflow-scrolling: touch; /* Mejora la experiencia táctil en dispositivos móviles */
+        }
+
+        /* Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; /* Para asegurar que la tabla ocupe el espacio disponible */
+            margin-top: 5px;
+            font-size: 7px; /* Ajuste del tamaño de texto */
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 3px 5px; /* Ajuste de espaciado */
+            text-align: left;
+            font-weight: normal;
+            word-wrap: break-word; /* Evitar desbordamiento del texto */
+            overflow: hidden; /* Asegura que el texto largo no se desborde */
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Ajustar las imágenes */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            flex-wrap: wrap;
+        }
+
+        .image-container img {
+            width: 20%; /* Las imágenes ocuparán el 20% del ancho disponible */
+            height: auto;
+            margin: 0 3px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para las celdas de firma, sello y observaciones */
+        .footer-table {
+            margin-top: 5px;
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        }
+
+        .footer-table td {
+            padding: 5px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .campo-titulo {
+            width: 20%;
+            font-weight: bold;
+            background-color: #f2f2f2;
+        }
+
+        .campo-espacio {
+            height: 25px;
+        }
+
+        .campo-observaciones {
+            height: 40px;
+        }
+
+        .firma-sello {
+            height: 25px;
+            text-align: center;
+        }
+
+        /* Agregar un margen a las imágenes para que se vean mejor en pantallas pequeñas */
+        @media screen and (max-width: 768px) {
+            .image-container img {
+                width: 30%; /* Las imágenes ocuparán más espacio en pantallas pequeñas */
+            }
+
+            .table-responsive {
+                font-size: 6px; /* Reducir tamaño de texto en pantallas pequeñas */
+            }
+
+            .campo-titulo {
+                font-size: 6px; /* Reducir tamaño de los títulos en pantallas pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Primera tabla -->
+    <div class="table-responsive">
+        <table>
+            <tbody>
+                <tr>
+                    <td rowspan="3" style="text-align: center;">
+                        <img src="{{ logo1_url }}" alt="Escudo" style="width: 50px; height: 50px;">
+                    </td>
+                    <td colspan="3">FICHA OPERATIVA CODIGO: codigo </td>
+                    <td>N°:</td>
+                    <td rowspan="3" style="text-align: center;">
+                        <img src="{{ logo2_url }}" alt="Escudo" style="width: 150px; height: 50px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>DISTRITO N°: distrito</td>
+                    <td>URBANIZACIÓN:</td>
+                    <td colspan="2">urbanizacion</td>
+                </tr>
+                <tr>
+                    <td>UBICACIÓN:</td>
+                    <td colspan="3">ubicacion</td>
+                </tr>
+                <tr>
+                    <td>COORDENADAS:</td>
+                    <td colspan="2">lat-long</td>
+                    <td>FECHA:</td>
+                    <td colspan="2">fecha</td>
+                </tr>
+                <tr>
+                    <td>INICIO:</td>
+                    <td>fecha</td>
+                    <td>CONCLUSIÓN:</td>
+                    <td>estado</td>
+                    <td>CUADRILLA:</td>
+                    <td>caudrilla</td>
+                </tr>
+                <tr>
+                    <td>TÉCNICO SUPERVISOR:</td>
+                    <td colspan="3">tecnico</td>
+                    <td>N° DE OBREROS:</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>MAQUINARIA:</td>
+                    <td colspan="2">maquinaria</td>
+                    <td>OPERADOR</td>
+                    <td colspan="2">operador</td>
+                </tr>
+                <tr>
+                    <td>CONCEPTO:</td>
+                    <td colspan="3">concepto</td>
+                    <td>AVANCE:</td>
+                    <td>avance</td>
+                </tr>
+                <tr>
+                    <td colspan="6">TRABAJOS REALIZADOS</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Espacio para las imágenes -->
+    <div class="image-container">
+        <a href="#" target="_blank">
+            <img src="{{ foto_inicio_url }}" alt="Foto de Inicio">
+        </a>
+        <a href="#" target="_blank">
+            <img src="{{ foto_desarrollo_url }}" alt="Foto de Desarrollo">
+        </a>
+        <a href="#" target="_blank">
+            <img src="{% static 'assets/images/logo-alto.png' %}" alt="Foto Culminado">
+        </a>
+    </div>
+
+    <!-- Segunda tabla en el pie de página -->
+    <div class="footer-table">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="campo-titulo">DESCRIPCIÓN</td>
+                    <td class="campo-titulo">FIRMA</td>
+                </tr>
+                <tr>
+                    <td class="campo-espacio">descripcion</td>
+                    <td class="campo-espacio"></td>
+                </tr>
+    
+                <tr>
+                    <td class="campo-titulo">SELLO</td>
+                    <td class="campo-titulo">OBSERVACIONES</td>
+                </tr>
+                <tr>
+                    <td class="campo-espacio"></td>
+                    <td class="campo-observaciones"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

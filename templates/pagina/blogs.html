@@ -1,0 +1,104 @@
+{% extends 'pagina/index.html' %}
+{% load static %}
+
+{% block content %}
+	<!-- Main content Start -->
+    <div class="main-content">
+        <!-- Breadcrumbs Start -->
+        <div class="rs-breadcrumbs breadcrumbs-overlay">
+            <div class="breadcrumbs-img">
+                <img src='{% static "assets/images/breadcrumbs/2.jpg" %}' alt="Breadcrumbs Image">
+            </div>
+            <div class="breadcrumbs-text white-color">
+                <h1 class="page-title">Blog</h1>
+                <ul>
+                    <li>
+                        <a class="active" href="inicio">Inicio</a>
+                    </li>
+                    <li>Blog</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Breadcrumbs End -->            
+
+          <!-- Blog Section Start -->
+        <div class="rs-inner-blog orange-color pt-100 pb-100 md-pt-70 md-pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 order-last">
+                        <div class="widget-area">
+                           {% comment %}  <div class="search-widget mb-50">
+                                <div class="search-wrap">
+                                    <input type="search" placeholder="Searching..." name="s" class="search-input" value="">
+                                    <button type="submit" value="Search"><i class=" flaticon-search"></i></button>
+                                </div>
+                            </div>
+                            <div class="recent-posts mb-50">
+                                <h3 class="widget-title">Recent Posts</h3>
+                                <ul>
+                                    <li><a href="#">University while the lovely valley team work</a></li>
+                                    <li><a href="#">High school program starting soon 2021</a></li>
+                                    <li><a href="#">Modern School the lovely valley team work</a></li>
+                                    <li><a href="#">While the lovely valley team work</a></li>
+                                    <li><a href="#">This is a great source of content for anyone…</a></li>
+                                </ul>
+                            </div>
+                            <div class="widget-archives mb-50">
+                                <h3 class="widget-title">Archives</h3>
+                                <ul>
+                                    <li><a href="#">September 2020</a></li>
+                                    <li><a href="#">September 2020</a></li>
+                                </ul>
+                            </div>  {% endcomment %}  
+                        </div>
+                    </div>
+                    <div class="col-lg-8 pr-50">
+                        <div class="row">
+                            <div class="col-lg-12 mb-70">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <a href="#"><img src='{% static "assets/images/blog/inner/1.jpg" %}' alt=""></a>
+                                    </div>
+                                    <div class="blog-content">
+                                        <h3 class="blog-title"><a href="#">Ariculo sobre Sistemas de Informacion Geografico</a></h3>
+                                        <div class="blog-meta">
+                                            <ul class="btm-cate">
+                                                <li>
+                                                    <div class="blog-date">
+                                                        <i class="fa fa-calendar-check-o"></i> Junio 14, 2019                                                        
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="author">
+                                                        <i class="fa fa-user-o"></i> Usuario  
+                                                    </div>
+                                                </li>   
+                                                <li>
+                                                    <div class="tag-line">
+                                                        <i class="fa fa-book"></i>
+                                                        <a href="#">University</a> 
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="blog-desc">   
+                                            El término "IDE geográfico" se refiere a las Infraestructuras de Datos Espaciales (IDE), que son un conjunto de tecnologías, políticas y acuerdos institucionales diseñados para facilitar la accesibilidad y el intercambio de datos geoespaciales. Las IDE permiten a las organizaciones y personas acceder, compartir y usar información geográfica de manera eficiente, promoviendo la interoperabilidad entre diferentes sistemas y facilitando la toma de decisiones informadas.
+
+                                            Introducción al concepto de IDE geográfico
+                                            Las IDE son esenciales en un mundo donde los datos geoespaciales juegan un papel crucial en muchas áreas, como la planificación urbana, la gestión ambiental, la agricultura, la defensa y la logística. Estas infraestructuras proporcionan los medios para almacenar, acceder, compartir y utilizar grandes volúmenes de datos geográficos generados por sensores, sistemas de posicionamiento global (GPS), satélites y otras fuentes.                                     
+                                        </div>
+                                        <div class="blog-button">
+                                            {% comment %} <a class="blog-btn" href="#">Continue Reading</a> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+      <!-- Blog Section End -->  
+    </div> 
+    <!-- Main content End --> 
+{% endblock %}

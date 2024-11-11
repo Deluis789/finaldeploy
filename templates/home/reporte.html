@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Ficha Operativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Sin margen en el body para aplicar margen desde el contenedor */
+            padding: 0; /* Sin padding en el body */
+            font-size: 14px; /* Tamaño de letra más pequeño */
+        }
+
+        .container {
+            margin: 20px; /* Margen alrededor de toda la hoja */
+            border: 2px solid #000; /* Borde más grueso */
+            padding: 15px; /* Espaciado interno para el contenedor */
+            border-radius: 8px; /* Esquinas redondeadas para el contenedor */
+            background-color: #f9f9f9; /* Color de fondo para el contenedor */
+            max-width: 800px; /* Tamaño máximo de la hoja similar a A4 */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px; /* Espaciado adicional entre la parte superior de la hoja y la tabla */
+            font-size: 12px; /* Tamaño de letra más pequeño para las tablas */
+            font-weight: bold; /* Letras en negrita */
+        }
+
+        th, td {
+            border: 2px solid #000; /* Bordes más gruesos */
+            padding: 6px; /* Espaciado interno en celdas reducido */
+            text-align: left;
+            font-weight: bold; /* Negrita en celdas */
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .long-row {
+            height: 80px; /* Altura de fila larga */
+        }
+
+        .combined-row {
+            text-align: center; /* Centrar contenido en la fila combinada */
+            background-color: #e7f3fe; /* Color de fondo para la fila combinada */
+        }
+
+        /* Estilos para las imágenes */
+        .image-container {
+            display: flex;
+            justify-content: center; /* Centra las imágenes horizontalmente */
+            margin-top: 30px; /* Espacio adicional antes de las imágenes */
+        }
+
+        .image-container img {
+            width: 30%; /* Ancho aumentado para que ocupen más espacio horizontal */
+            height: 30%; /* Mantener proporción */
+            margin: 0 10px; /* Espacio entre las imágenes */
+            border-radius: 8px; /* Esquinas redondeadas para las imágenes */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para efecto de profundidad */
+        }
+
+        .footer-table {
+            margin-top: 40px; /* Espacio adicional antes de la tabla del pie de página */
+        }
+
+        td {
+            padding: 5px;
+            border: 2px solid #000; /* Bordes más gruesos */
+            vertical-align: top; /* Alinear al tope para las áreas de texto */
+            font-weight: bold; /* Letras en negrita */
+        }
+
+        /* Tamaño y alineación para los títulos de los campos */
+        .campo-titulo {
+            width: 20%;
+            font-weight: bold;
+            background-color: #f2f2f2;
+            text-align: left;
+            border: 2px solid #000; /* Bordes más gruesos */
+        }
+
+        /* Estilos para los campos de espacio en blanco */
+        .campo-espacio {
+            height: 50px; /* Altura aumentada para los campos */
+        }
+
+        /* Estilo para ajustar el área de firma */
+        .firma-sello {
+            height: 50px;
+            text-align: center;
+        }
+
+        /* Campo de observaciones con más altura */
+        .campo-observaciones {
+            height: 80px; /* Aumentada para las observaciones */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Primera tabla -->
+    <table>
+        <tbody>
+            <tr>
+                <td rowspan="3" style="text-align: center;">
+                    <img src="{% static 'assets/images/logo-alto.png' %}" alt="Escudo" style="width: 100px; height: 100px; display: block; margin: 0 auto;">
+                </td>
+                <td colspan="3">FICHA OPERATIVA CODIGO: codigo </td>
+                <td>N°:</td>
+                <td rowspan="3" style="text-align: center;">
+                    <img src="{% static 'assets/images/escudo.jpg' %}" alt="Escudo" style="width: 150px; height: 150px; display: block; margin: 0 auto;">
+                </td>
+            </tr>
+            <tr>
+                <td>DISTRITO N°: distrito</td>
+                <td>URBANIZACIÓN:</td>
+                <td colspan="2">urbanizacion</td>
+            </tr>
+            <tr>
+                <td>UBICACIÓN:</td>
+                <td colspan="3">ubicacion</td>
+            </tr>
+            <tr>
+                <td>COORDENADAS:</td>
+                <td colspan="2">lat-long</td>
+                <td>FECHA:</td>
+                <td colspan="2">fecha</td>
+            </tr>
+            <tr>
+                <td>INICIO:</td>
+                <td>fecha</td>
+                <td>CONCLUSIÓN:</td>
+                <td>estado</td>
+                <td>CUADRILLA:</td>
+                <td>caudrilla</td>
+            </tr>
+            <tr>
+                <td>TÉCNICO SUPERVISOR:</td>
+                <td colspan="3">tecnico</td>
+                <td>N° DE OBREROS:</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>MAQUINARIA:</td>
+                <td colspan="2">maquinaria</td>
+                <td>OPERADOR</td>
+                <td colspan="2">operador</td>
+            </tr>
+            <tr>
+                <td>CONCEPTO:</td>
+                <td colspan="3">concepto</td>
+                <td>AVANCE:</td>
+                <td>avance</td>
+            </tr>
+            <tr>
+                <td colspan="6">TRABAJOS REALIZADOS</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Espacio para las imágenes -->
+    <div class="image-container">
+        <a href="#" target="_blank">
+            <img src="{% static 'assets/images/logo-alto.png' %}" alt="Foto de Inicio">
+        </a>
+        <a href="#" target="_blank">
+            <img src="{% static 'assets/images/logo-alto.png' %}" alt="Foto de Desarrollo">
+        </a>
+        <a href="#" target="_blank">
+            <img src="{% static 'assets/images/logo-alto.png' %}" alt="Foto Culminado">
+        </a>
+    </div>
+
+    <!-- Segunda tabla en el pie de página -->
+    <div class="footer-table">
+        <table>
+            <tbody>
+                <!-- Fila de títulos -->
+                <tr>
+                    <td class="campo-titulo">DESCRIPCIÓN</td>
+                    <td class="campo-titulo">FIRMA</td>
+                </tr>
+                <!-- Fila de espacios en blanco -->
+                <tr>
+                    <td class="campo-espacio">desciprcion</td>
+                    <td class="campo-espacio"></td>
+                </tr>
+    
+                <!-- Fila de títulos -->
+                <tr>
+                    <td class="campo-titulo">SELLO</td>
+                    <td class="campo-titulo">OBSERVACIONES</td>
+                </tr>
+                <!-- Fila de espacios en blanco -->
+                <tr>
+                    <td class="campo-espacio"></td>
+                    <td class="campo-observaciones"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>
